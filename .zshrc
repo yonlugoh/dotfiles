@@ -1,6 +1,15 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/yonlu/.sdkman"
 [[ -s "/Users/yonlu/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/yonlu/.sdkman/bin/sdkman-init.sh"
+
+source /Users/yonlu/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel9k.zsh-theme
 
 eval $(thefuck --alias)
 
@@ -26,7 +35,7 @@ alias sbtc='sbt console'
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Git
-alias gi="git init && gac 'Initial commit'"
+alias gi="it init && gac 'Initial commit'"
 
 alias gs="git status"
 alias gg='git log'
@@ -100,3 +109,5 @@ C_BG_PURPLE="\[\033[45m\]"
 C_BG_CYAN="\[\033[46m\]"
 C_BG_LIGHTGRAY="\[\033[47m\]"
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
