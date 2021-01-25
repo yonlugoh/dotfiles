@@ -50,6 +50,7 @@ alias gpom="git push origin master"
 alias gl="git pull" # + remote & branch names
 alias glo="git pull origin" # + branch name
 alias glom="git pull origin master"
+alias gf="git fetch origin"
 
 alias gb="git branch" # + branch name
 alias gc="git checkout" # + branch name
@@ -57,6 +58,8 @@ alias gcb="git checkout -b" # + branch name
 alias gm='git commit'
 alias grm='git restore --staged'
 alias gad='git add'
+
+alias py='python'
 
 # lazygit change directory on exit
 lg()
