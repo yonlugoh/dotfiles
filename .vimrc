@@ -144,17 +144,17 @@ augroup CLNRSet
     autocmd! ColorScheme * hi CursorLineNR cterm=reverse,bold ctergmfg=184 ctermbg=None
 augroup END
 
-" Highlight current word with ctrl+ k
-nnoremap <C-K> :call HighlightNearCursor()<CR>
-function HighlightNearCursor()
-  if !exists("s:highlightcursor")
-    match Todo /\k*\%#\k*/
-    let s:highlightcursor=1
-  else
-    match None
-    unlet s:highlightcursor
-  endif
-endfunction
+" " Highlight current word with ctrl+ k
+" nnoremap <C-K> :call HighlightNearCursor()<CR>
+" function HighlightNearCursor()
+"   if !exists("s:highlightcursor")
+"     match Todo /\k*\%#\k*/
+"     let s:highlightcursor=1
+"   else
+"     match None
+"     unlet s:highlightcursor
+"   endif
+" endfunction
 
 " Mappping to toggle line numbers: ctl+n, ctrl+n
 noremap <S-N><S-N> :set invnumber invrelativenumber<CR>
@@ -195,6 +195,8 @@ Plug 'tpope/vim-fugitive'
 " " <TAB>: completion.
 " inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" Surround
+Plug 'tpope/vim-surround'
 
 " whether or not to show the nerdtree brackets around flags
 let g:webdevicons_conceal_nerdtree_brackets = 1
@@ -263,7 +265,7 @@ set ignorecase
 
 :set mousemodel=extend
 
-:set nojoinspaces
+
 
 
 call plug#end()
