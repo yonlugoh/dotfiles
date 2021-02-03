@@ -35,7 +35,8 @@ alias sbtc='sbt console'
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Git
-alias gi="it init && gac 'Initial commit'"
+alias gi="git init && gac 'Initial commit'"
+alias gc='git clone'
 
 alias gs="git status"
 alias gg='git log'
@@ -60,7 +61,9 @@ alias grm='git restore --staged'
 alias gad='git add'
 
 alias py='python'
+alias act='source venv/bin/activate'
 
+alias reload='source ~/.zshrc'
 # lazygit change directory on exit
 lg()
 {
@@ -112,5 +115,6 @@ C_BG_PURPLE="\[\033[45m\]"
 C_BG_CYAN="\[\033[46m\]"
 C_BG_LIGHTGRAY="\[\033[47m\]"
 
+source ~/.mongorc
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
