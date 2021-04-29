@@ -255,6 +255,15 @@ Plug 'GEverding/vim-hocon'
 
 Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-line'
 
+" Indentation text object
+Plug 'michaeljsmith/vim-indent-object'
+
+" Targets
+Plug 'wellle/targets.vim'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 " General search settings
 set incsearch " Search as you are typing
 set wrapscan " Continue searching at top after hitting bottom
