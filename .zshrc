@@ -77,10 +77,7 @@ lg()
     fi
 }
 
-alias rohan='open "zoommtg://zoom.us/join?confno=8647425327"'
-
-alias zoom='open "zoommtg://zoom.us/join?confno=3017104516?pwd=ZWU2Rk9EWUVlZXJzVjJwU1dHSXI2UT09"'
-
+alias killport='kill $(lsof -t -i :9000)'
 
 alias config='/usr/bin/git --git-dir=/Users/yonlu/.cfg/ --work-tree=/Users/yonlu'
 
@@ -118,3 +115,25 @@ C_BG_LIGHTGRAY="\[\033[47m\]"
 source ~/.mongorc
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/yonlu/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/yonlu/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/yonlu/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/yonlu/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+if [[ $__INTELLIJ_COMMAND_HISTFILE__ ]]; then
+  ZSH_THEME="robbyrussell"
+else
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+fi
