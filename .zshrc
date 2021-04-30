@@ -113,6 +113,9 @@ C_BG_CYAN="\[\033[46m\]"
 C_BG_LIGHTGRAY="\[\033[47m\]"
 
 source ~/.mongorc
+
+. /Users/yonlu/z.sh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -137,3 +140,4 @@ if [[ $__INTELLIJ_COMMAND_HISTFILE__ ]]; then
 else
   ZSH_THEME="powerlevel10k/powerlevel10k"
 fi
+
