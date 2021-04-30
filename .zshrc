@@ -60,6 +60,9 @@ alias gm='git commit'
 alias grm='git restore --staged'
 alias gad='git add'
 
+alias gst='git stash'
+alias gsta='git stash apply'
+
 alias py='python'
 alias act='source venv/bin/activate'
 
