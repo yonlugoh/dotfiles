@@ -67,6 +67,7 @@ alias py='python'
 alias act='source venv/bin/activate'
 
 alias reload='source ~/.zshrc'
+alias k='kubectl'
 # lazygit change directory on exit
 lg()
 {
@@ -144,3 +145,4 @@ else
   ZSH_THEME="powerlevel10k/powerlevel10k"
 fi
 
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
