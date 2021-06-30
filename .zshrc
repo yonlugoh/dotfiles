@@ -36,7 +36,7 @@ alias sbtc='sbt console'
 
 # Git
 alias gi="git init && gac 'Initial commit'"
-alias gc='git clone'
+alias gcl='git clone'
 
 alias gs="git status"
 alias gg='git log'
@@ -86,6 +86,10 @@ lg()
 alias killport='kill $(lsof -t -i :9000)'
 
 alias config='/usr/bin/git --git-dir=/Users/yonlu/.cfg/ --work-tree=/Users/yonlu'
+
+# Weather
+alias weather='curl "wttr.in/Singapore,Hillion"
+curl "http://wttr.in/Singapore,Hillion?format=v2"'
 
 # Make ls use colors
 export CLICOLOR=1
