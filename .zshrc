@@ -70,6 +70,7 @@ alias act='source venv/bin/activate'
 
 alias reload='source ~/.zshrc'
 alias k='kubectl'
+alias clearvpn='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 # lazygit change directory on exit
 lg()
 {
