@@ -1,0 +1,13 @@
+[user]
+	email = yonlu@leadiq.com
+	name = Yon-lu Goh
+[credential]
+	helper = osxkeychain
+[rerere]
+	enabled = true
+[pull]
+	rebase = false
+[core]
+	excludesfile = /Users/yonlu/.gitignore_global
+[alias]
+    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
