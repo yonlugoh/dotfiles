@@ -63,7 +63,7 @@ alias gad='git add'
 alias gst='git stash'
 alias gsta='git stash apply'
 alias gsw='git switch'
-
+alias gclear='git cleanup'
 
 alias py='python'
 alias act='source venv/bin/activate'
