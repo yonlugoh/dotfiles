@@ -71,6 +71,8 @@ alias act='source venv/bin/activate'
 alias reload='source ~/.zshrc'
 alias k='kubectl'
 alias clearvpn='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+alias typecheck='dmypy run -- main.py context_streamlit.py --namespace-packages'
+alias fmtAll='sbt "scalafmt;it:scalafmt;test:scalafmt"'
 # lazygit change directory on exit
 lg()
 {
@@ -84,7 +86,9 @@ lg()
     fi
 }
 
-alias killport='kill $(lsof -t -i :9000)'
+killport() {
+    kill $(lsof -t -i :"$1")
+}
 
 alias config='/usr/bin/git --git-dir=/Users/yonlu/.cfg/ --work-tree=/Users/yonlu'
 
