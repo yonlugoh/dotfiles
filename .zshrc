@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -54,6 +56,7 @@ alias glom="git pull origin master"
 alias gf="git fetch origin"
 
 alias gb="git branch" # + branch name
+alias gbd="git branch --sort=-committerdate" # git branch by recent commits
 alias gc="git checkout" # + branch name
 alias gcb="git checkout -b" # + branch name
 alias gm='git commit'
@@ -71,7 +74,7 @@ alias act='source venv/bin/activate'
 alias reload='source ~/.zshrc'
 alias k='kubectl'
 alias clearvpn='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
-alias typecheck='dmypy run -- main.py context_streamlit.py --namespace-packages'
+alias typecheck='dmypy run -- main.py context_streamlit.py scripts/train/train_context.py scripts/cronjob/veritas_liked_edited_generations.py scripts/oneoffs/veritas/candidate_flagging.py --namespace-packages --config-file mypy.ini'
 alias fmtAll='sbt "scalafmt;it:scalafmt;test:scalafmt"'
 # lazygit change directory on exit
 lg()
@@ -157,3 +160,26 @@ else
 fi
 
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+
+export PYENV_SHELL=zsh
+source '/usr/local/Cellar/pyenv/2.2.5/libexec/../completions/pyenv.zsh'
+command pyenv rehash 2>/dev/null
+pyenv() {
+  local command
+  command="${1:-}"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  rehash|shell)
+    eval "$(pyenv "sh-$command" "$@")"
+    ;;
+  *)
+    command pyenv "$command" "$@"
+    ;;
+  esac
+}
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
